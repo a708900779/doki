@@ -49,9 +49,14 @@ merged_df = merged_df.drop(['花名','商品名称','店铺内一级分类名称
 
 
 # 在两个列之间生成一个空白列，方便直接复制到饿了么模板表格里面去
-col_position = merged_df.columns.get_loc('商品条形码') + 1
+col_position = 1
+merged_df.insert(col_position,'自定义ID','')
 
-merged_df.insert(col_position,'xixi','')
+merged_df.insert(col_position+2,'活动总库存','')
+merged_df.insert(col_position+3,'每日活动库存','')
+merged_df.insert(col_position+4,'每人/活动期间限购','')
+merged_df.insert(col_position+5,'每人/每日限购','999')
+
 
 #删除空行
 merged_df = merged_df.dropna(subset=['价格'])
