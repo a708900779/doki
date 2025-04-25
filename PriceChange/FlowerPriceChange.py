@@ -6,7 +6,7 @@ import re
 
 
 
-Store_Data_PATH = '../data/花店价格/美团降价0418.xlsx'
+Store_Data_PATH = '../data/花店价格/美团商品0425.xlsx'
 Code_Name_PATH= '../data/花店价格/花趣饿了么/花趣商品0418.xlsx'
 
 exclude_values = [
