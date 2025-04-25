@@ -6,8 +6,8 @@ import re
 
 
 
-Store_Data_PATH = 'data/花店价格/美团降价0418.xlsx'
-Code_Name_PATH= 'data/花店价格/抖音小时达/抖音价格0417.xlsx'
+Store_Data_PATH = '../data/花店价格/美团降价0418.xlsx'
+Code_Name_PATH= '../data/花店价格/抖音小时达/抖音价格0417.xlsx'
 
 exclude_values = [
     '见面小花束',
@@ -20,8 +20,9 @@ exclude_values = [
 
 # 读取Excel文件
 df = pd.read_excel(Store_Data_PATH,usecols=['商品名称','价格','店内一级分类'])
-dy = pd.read_excel(Code_Name_PATH,sheet_name='参考信息-商品+规格ID',usecols=['商品ID','商品名称']).to_csv('data/花店价格/抖音小时达/抖音价格.csv',index=False)
-dy = pd.read_csv('data/花店价格/抖音小时达/抖音价格.csv',encoding='utf-8')
+dy = pd.read_excel(Code_Name_PATH,sheet_name='参考信息-商品+规格ID',usecols=['商品ID','商品名称']).to_csv(
+    '../data/花店价格/抖音小时达/抖音价格.csv', index=False)
+dy = pd.read_csv('../data/花店价格/抖音小时达/抖音价格.csv', encoding='utf-8')
 
 # 定义一个函数来提取【】内的花名
 def extract_flower_name(name):
@@ -58,7 +59,7 @@ merged_df = merged_df.dropna(subset=['价格'])
 
 
 # 输出合并后的结果
-output_path = "data/花店价格/抖音小时达/抖音花趣代码导出价格.xlsx"
+output_path = "../data/花店价格/抖音小时达/抖音花趣代码导出价格.xlsx"
 
 merged_df['商品ID'] = merged_df['商品ID'].astype(str)
 

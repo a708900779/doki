@@ -6,8 +6,8 @@ import re
 
 
 
-Store_Data_PATH = 'data/花店价格/美团降价0418.xlsx'
-Code_Name_PATH= 'data/花店价格/花趣饿了么/花趣商品0418.xlsx'
+Store_Data_PATH = '../data/花店价格/美团降价0418.xlsx'
+Code_Name_PATH= '../data/花店价格/林间饿了么/林间商品0418.xlsx'
 
 exclude_values = [
     '见面小花束',
@@ -57,12 +57,11 @@ merged_df.insert(col_position+3,'每日活动库存','')
 merged_df.insert(col_position+4,'每人/活动期间限购','')
 merged_df.insert(col_position+5,'每人/每日限购','999')
 
-
 #删除空行
 merged_df = merged_df.dropna(subset=['价格'])
 
 # 输出合并后的结果
-output_path = "data/花店价格/花趣饿了么/花趣饿了么代码导出价格.xlsx"
+output_path = "../data/花店价格/林间饿了么/林间饿了么代码导出价格.xlsx"
 
 merged_df.to_excel(output_path,index=False)
 
