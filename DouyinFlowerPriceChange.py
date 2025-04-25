@@ -58,7 +58,7 @@ merged_df = merged_df.dropna(subset=['价格'])
 
 
 # 输出合并后的结果
-output_path = "data/花店价格/抖音小时达/抖音复制价格.xlsx"
+output_path = "data/花店价格/抖音小时达/抖音花趣代码导出价格.xlsx"
 
 merged_df['商品ID'] = merged_df['商品ID'].astype(str)
 

@@ -62,7 +62,7 @@ merged_df.insert(col_position+5,'每人/每日限购','999')
 merged_df = merged_df.dropna(subset=['价格'])
 
 # 输出合并后的结果
-output_path = "data/花店价格/花趣饿了么/花趣饿了么价格.xlsx"
+output_path = "data/花店价格/花趣饿了么/花趣饿了么代码导出价格.xlsx"
 
 merged_df.to_excel(output_path,index=False)
 
