@@ -6,15 +6,15 @@ import re
 
 
 
-Store_Data_PATH = '../data/花店价格/美团商品0519.xlsx'
-Code_Name_PATH= '../data/花店价格/花趣饿了么/花趣商品0418.xlsx'
+Store_Data_PATH = '../data/花店价格/美团商品0522.xlsx'
+Code_Name_PATH= '../data/花店价格/花趣饿了么/花趣商品0522.xlsx'
 
 exclude_values = [
     '见面小花束',
     '草莓趴趴熊',
     '莓有烦恼',
-    '春日来信',
-    '甜酷蝴蝶'
+    '甜酷蝴蝶',
+    '小熊宇宙'
 ]
 
 # 读取Excel文件
