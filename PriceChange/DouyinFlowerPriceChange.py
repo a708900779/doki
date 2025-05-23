@@ -3,10 +3,16 @@ import numpy as np
 import openpyxl
 import pandas as pd
 import re
+from datetime import datetime
 
 
+now = datetime.now()
+month = str(now.month).zfill(2)  # 月份补零
+day = str(now.day).zfill(2)      # 日期补零
+current_date = month + day
 
-Store_Data_PATH = '../data/花店价格/美团商品0522.xlsx'
+
+Store_Data_PATH = '../data/花店价格/美团商品'+current_date+'.xlsx'
 Code_Name_PATH= '../data/花店价格/抖音小时达/抖音价格0417.xlsx'
 
 exclude_values = [
