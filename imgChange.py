@@ -67,17 +67,6 @@ output_MP4 = "downloaded_mp4"
 
 
 
-
-
-
-
-
-
-
-
-total_path = "https://img.alicdn.com/imgextra/i1/3252796102/O1CN01UadpEr1uwllZsZkAY_!!3252796102.jpg https://img.alicdn.com/imgextra/i2/3252796102/O1CN017Nq3vG1uwllXI8Xdq_!!3252796102.jpg https://img.alicdn.com/imgextra/i2/3252796102/O1CN01pEHkXS1uwllb5FCkh_!!3252796102.jpg https://img.alicdn.com/imgextra/i2/3252796102/O1CN01Hlde7A1uwllZsY03y_!!3252796102.jpg https://img.alicdn.com/imgextra/i1/3252796102/O1CN01UyjkuU1uwllXeN5lN_!!3252796102.jpg https://img.alicdn.com/imgextra/i2/3252796102/O1CN01uWF5C91uwllYkGcyL_!!3252796102.jpg https://img.alicdn.com/imgextra/i2/3252796102/O1CN01Q20poj1uwllb5EbLL_!!3252796102.jpg https://img.alicdn.com/imgextra/i3/3252796102/O1CN014SK26u1uwllXeOMlx_!!3252796102.jpg https://img.alicdn.com/imgextra/i1/3252796102/O1CN01CXIaZ41uwllXeOZEu_!!3252796102.jpg https://img.alicdn.com/imgextra/i1/3252796102/O1CN01NJIyAb1uwllaVBcoX_!!3252796102.jpg https://img.alicdn.com/imgextra/i4/3252796102/O1CN01A4wltV1uwllaV9kOI_!!3252796102.jpg https://img.alicdn.com/imgextra/i4/3252796102/O1CN01jpVVu71uwllYkFUHf_!!3252796102.jpg"
-
-
-
+total_path = "https://img.alicdn.com/imgextra/i3/2209864271836/O1CN01z9UEU41PQvwhTUrxr_!!2209864271836.jpghttps://img.alicdn.com/imgextra/i1/2209864271836/O1CN01FJBIdU1PQvwsE5xg0_!!2209864271836.jpghttps://img.alicdn.com/imgextra/i4/2209864271836/O1CN01bSq5en1PQvwuPUiin_!!2209864271836.jpghttps://img.alicdn.com/imgextra/i4/2209864271836/O1CN01i5NWse1PQvwxBfpt9_!!2209864271836.jpg"
 # download_mp4_urls_from_string(total_path,output_MP4)
 download_images_from_string(total_path, output_folder)
