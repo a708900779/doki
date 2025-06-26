@@ -7,7 +7,8 @@ Store_Data_PATH = 'data/京东库存0326.xlsx'
 cityList = ['杭州','深圳','北京','武汉','成都','沈阳','西安']
 
 prductCodeList = ['EMG4418152092014','EMG4418210447469','EMG4418212367632','EMG4418208889030','EMG4418416908906','EMG4418422384339',
-'EMG4418254273209','EMG4418279176732','EMG4418531683543','EMG4418535776876']
+'EMG4418254273209','EMG4418279176732','EMG4418792349011','EMG4418531683543','EMG4418535776876','EMG4418731721033','EMG4418811201244','EMG4418731720841',
+'EMG4418749905666','EMG4418749906650''EMG4418279175564','EMG4418417149542','EMG4418791451639']
 
 
 # 读取文件，文件编码是gbk类型
@@ -43,7 +44,13 @@ for city in cityList:
 for j in range(len(prductCodeList)):
     if(j == 6):
         print()
-    if(j == 8):
+    if(j == 9):
+        print()
+    if(j == 11):
+        print()
+    if(j == 14):
+        print()
+    if(j == 16):
         print()
     for i in range(len(cityList)):
         print( "%d" %(resultArray[i][j]),end='\t')

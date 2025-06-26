@@ -67,5 +67,5 @@ df_main = df_main[cols]  # [4](@ref)
 df_main = df_main.dropna(subset=['商品简称'])
 # 保存处理后的数据
 
-df_main.to_excel("../data/howgo数据/"+current_date+"周报.xlsx", index=False, engine='openpyxl')  # [5,10](@ref)
+df_main.to_excel("../data/howgo数据/"+current_date+"周报数据.xlsx", index=False, engine='openpyxl')  # [5,10](@ref)
 print(df_main)
