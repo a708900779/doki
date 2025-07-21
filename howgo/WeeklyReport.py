@@ -31,8 +31,9 @@ df_main = df_main[required_columns]
 
 # 方法1：使用 astype() 强制转换（需确保无非法字符）
 # 示例：去除货币符号和千分位分隔符
-df_main["支付金额"] = df_main["支付金额"].str.replace("¥", "").str.replace(",", "").astype(float)
-df_main["成功退款金额"] = df_main["成功退款金额"].str.replace("¥", "").str.replace(",", "").astype(float)
+df_main["支付金额"] = df_main["支付金额"].astype(str).str.replace(r"[¥,]", "", regex=True).astype(float)
+df_main["成功退款金额"] = df_main["成功退款金额"].astype(str).str.replace(r"[¥,]", "", regex=True).astype(float)
+
 
 df_main["支付金额"] = df_main["支付金额"].astype(float)
 df_main["成功退款金额"] = df_main["成功退款金额"].astype(float)
