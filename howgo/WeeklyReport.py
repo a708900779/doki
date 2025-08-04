@@ -41,6 +41,8 @@ df_main["成功退款金额"] = df_main["成功退款金额"].astype(float)
 
 
 real_sales = df_main['支付金额'] - df_main['成功退款金额']
+aov = (real_sales / df_main['支付买家数']).round(1)
+
 # 插入新列到指定位置（商品简称和商品访客数之间）
 # 步骤说明：
 # 1. 获取当前列的索引位置
@@ -48,6 +50,9 @@ current_cols = df_main.columns.tolist()
 insert_pos = current_cols.index('商品访客数')  # 在商品访客数之前插入
 
 # 2. 从后往前插入以保证顺序正确
+df_main.insert(insert_pos, '客单价', aov)     # 插入空列[3,6](@ref)
+df_main.insert(insert_pos, '老客销售额占比', np.nan)     # 插入空列[3,6](@ref)
+df_main.insert(insert_pos, '老客销售额', np.nan)     # 插入空列[3,6](@ref)
 df_main.insert(insert_pos, '推广占比', np.nan)  # 插入空列[3,6](@ref)
 df_main.insert(insert_pos, '推广费', np.nan)     # 插入空列[3,6](@ref)
 df_main.insert(insert_pos, '真实销售额', real_sales)  # 插入计算列[1,7](@ref)

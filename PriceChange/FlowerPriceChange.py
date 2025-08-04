@@ -12,8 +12,8 @@ day = str(now.day).zfill(2)      # 日期补零
 current_date = month + day
 
 
-Store_Data_PATH = '../data/花店价格/价格初始表.xlsx'
-Code_Name_PATH= '../data/花店价格/花趣饿了么/花趣商品0704.xlsx'
+Store_Data_PATH = '../data/花店价格/美团价格0804.xlsx'
+Code_Name_PATH= '../data/花店价格/花趣饿了么/花趣商品0804.xlsx'
 
 exclude_values = [
     '见面小花束',
@@ -24,7 +24,7 @@ exclude_values = [
 ]
 
 # 读取Excel文件
-df = pd.read_excel(Store_Data_PATH,usecols=['商品名称','价格','店内一级分类'])
+df = pd.read_excel(Store_Data_PATH,usecols=['商品名称','价格'])
 elm = pd.read_excel(Code_Name_PATH,usecols=['商品条形码','商品名称','店铺内一级分类名称'])
 # 定义一个函数来提取【】内的花名
 def extract_flower_name(name):
@@ -38,16 +38,15 @@ df['花名'] = df['商品名称'].apply(extract_flower_name)
 elm['花名'] = elm['商品名称'].apply(extract_flower_name)
 
 # 过滤掉店内一级分类为“气球＆礼袋”的选项
-df_filtered = df[~df['店内一级分类'].isin(['气球＆礼袋', '家居花区【温馨】'])]
 elm_filtered = elm[~elm['店铺内一级分类名称'].isin(['气球＆礼袋', '家居花区【温馨】'])]
 
 # 过滤掉多SKU链接
-df_filtered = df_filtered[~df_filtered['花名'].isin(exclude_values)]
+df = df[~df['花名'].isin(exclude_values)]
 elm_filtered = elm_filtered[~elm_filtered['花名'].isin(exclude_values)]
 
 
 # 输出花名和对应的价格
-result = df_filtered[['花名', '价格']].dropna()
+result = df[['花名', '价格']].dropna()
 
 merged_df = pd.merge(elm_filtered,result,on='花名',how='left')
 merged_df = merged_df.drop(['花名','商品名称','店铺内一级分类名称'],axis=1)
