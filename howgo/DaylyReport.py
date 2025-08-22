@@ -11,7 +11,7 @@ current_date = month + day
 
 
 
-DATA_PATH = "../data/howgo数据/日报/天猫数据"+current_date+".xls"
+DATA_PATH = "../data/howgo数据/日报/天猫数据0822.xls"
 MAPPING_PATH = "../data/howgo数据/日报/天猫商品ID和名称对应表.xlsx"
 
 # 读取主数据表（兼容.xls格式）
