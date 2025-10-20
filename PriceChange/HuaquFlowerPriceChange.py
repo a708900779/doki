@@ -12,7 +12,7 @@ day = str(now.day).zfill(2)      # 日期补零
 current_date = month + day
 
 
-Store_Data_PATH = '../data/花店价格/美团价格0822.xlsx'
+Store_Data_PATH = '../data/花店价格/美团价格0902.xlsx'
 Code_Name_PATH= '../data/花店价格/花趣饿了么/花趣商品0822.xlsx'
 
 exclude_values = [

@@ -9,7 +9,8 @@ current_date = month + day
 
 
 
-DATA_PATH = "../data/howgo数据/周报/天猫数据"+current_date+".xls"
+# DATA_PATH = "../data/howgo数据/周报/天猫数据"+current_date+".xls"
+DATA_PATH = "../data/howgo数据/周报/天猫数据1020.xls"
 MAPPING_PATH = "../data/howgo数据/周报/天猫商品ID和名称对应表.xlsx"
 
 # 读取主数据表（兼容.xls格式）
@@ -34,10 +35,12 @@ df_main = df_main[required_columns]
 df_main["支付金额"] = df_main["支付金额"].astype(str).str.replace(r"[¥,]", "", regex=True).astype(float)
 df_main["成功退款金额"] = df_main["成功退款金额"].astype(str).str.replace(r"[¥,]", "", regex=True).astype(float)
 df_main["商品访客数"] = df_main["商品访客数"].astype(str).str.replace(r"[¥,]", "", regex=True).astype(float)
+df_main['商品加购件数'] = df_main['商品加购件数'].astype(str).str.replace(r"[¥,]", "", regex=True).astype(float)
+
 
 df_main["支付金额"] = df_main["支付金额"].astype(float)
 df_main["成功退款金额"] = df_main["成功退款金额"].astype(float)
-df_main['商品加购件数'] = df_main['商品加购件数'].astype(float)
+
 
 real_sales = df_main['支付金额'] - df_main['成功退款金额']
 
@@ -76,5 +79,5 @@ df_main = df_main[cols]  # [4](@ref)
 df_main = df_main.dropna(subset=['商品简称'])
 # 保存处理后的数据
 
-df_main.to_excel("../data/howgo数据/"+current_date+"周报数据.xlsx", index=False, engine='openpyxl')  # [5,10](@ref)
+df_main.to_excel("../data/howgo数据/周报/"+current_date+"周报数据.xlsx", index=False, engine='openpyxl')  # [5,10](@ref)
 print(df_main)
