@@ -11,7 +11,7 @@ current_date = month + day
 
 
 
-DATA_PATH = "../data/howgo数据/日报/天猫数据1019.xls"
+DATA_PATH = "../data/howgo数据/日报/天猫数据1106.xls"
 MAPPING_PATH = "../data/howgo数据/日报/天猫商品ID和名称对应表.xlsx"
 
 # 读取主数据表（兼容.xls格式）
@@ -27,7 +27,7 @@ required_columns = [
 ]
 df_main = df_main[required_columns]
 # 提取指定的几个商品ID
-target_ids = ['P绳','双头P绳','水杯','双头牵引绳','飞盘','拾便袋','训导尿垫','丰容碗']
+target_ids = ['P绳','双头P绳','水杯','双头牵引绳','飞盘','拾便袋','训导尿垫']
 
 
 # 计算真实销售额（支付金额 - 成功退款金额）
